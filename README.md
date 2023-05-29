@@ -2,6 +2,8 @@
 
 用python简单实现了B站二维码登入
 
+> 并写了几个示例
+
 API文档由 [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 提供
 
 # 流程
