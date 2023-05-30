@@ -6,7 +6,6 @@ level = data[ "level_info" ][ "current_level" ]
 coin = data[ "money" ]
 exp = data[ "level_info" ][ "current_exp" ]
 senior_member = data[ "is_senior_member" ]
-
 max_exp = 28800 # lv6
 
 if level == 6 :
@@ -15,15 +14,16 @@ if level == 6 :
         print("还没通过硬核会员\n快去尝试吧\^o^/\nhttps://www.bilibili.com/h5/senior-newbie")
 else :
     need_day = 0
-    while max_exp > exp :
+    i = exp
+    while max_exp > i :
         need_day += 1
-        exp += 15 # 登录+看视频+分享
+        i += 15 # 登录+看视频+分享
         coin += 1
         if coin >= 5 :
             coin -= 5
-            exp += 50
+            i += 50
         elif coin >= 1 :
             have_coin = int(coin)
             coin -= have_coin
-            exp += have_coin * 10
+            i += have_coin * 10
     print( f"当前等级 { level }\n当前经验 { exp }\n当前硬币 { coin }\n还需经验 { max_exp - exp }\n还需天数 { need_day }" )
