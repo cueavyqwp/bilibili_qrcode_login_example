@@ -25,6 +25,6 @@ else :
             exp += 50
         elif coin >= 1 :
             have_coin = int(coin)
-            # coin -= have_coin
+            coin -= have_coin
             exp += have_coin * 10
     print( f"当前等级 { level }\n当前经验 { exp_old }\n当前硬币 { coin_old }\n还需经验 { max_exp - exp_old }\n还需天数 { need_day }" )
