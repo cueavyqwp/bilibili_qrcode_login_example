@@ -14,16 +14,18 @@ if level == 6 :
         print("还没通过硬核会员\n快去尝试吧\^o^/\nhttps://www.bilibili.com/h5/senior-newbie")
 else :
     need_day = 0
-    i = exp
-    while max_exp > i :
+    exp_old = exp
+    coin_old = coin
+    while max_exp > exp :
         need_day += 1
-        i += 15 # 登录+看视频+分享
+        exp += 15 # 登录+看视频+分享
         coin += 1
         if coin >= 5 :
-            coin -= 5
-            i += 50
+            # coin -= 5
+            exp += 50
         elif coin >= 1 :
             have_coin = int(coin)
-            coin -= have_coin
-            i += have_coin * 10
-    print( f"当前等级 { level }\n当前经验 { exp }\n当前硬币 { coin }\n还需经验 { max_exp - exp }\n还需天数 { need_day }" )
+            # coin -= have_coin
+            exp += have_coin * 10
+    print( f"当前等级 { level }\n当前经验 { exp_old }\n当前硬币 { coin_old }\n还需经验 { max_exp - exp_old }\n还需天数 { need_day }" )
+    print(coin)
