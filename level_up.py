@@ -21,7 +21,7 @@ else :
         exp += 15 # 登录+看视频+分享
         coin += 1
         if coin >= 5 :
-            # coin -= 5
+            coin -= 5
             exp += 50
         elif coin >= 1 :
             have_coin = int(coin)
