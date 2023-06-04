@@ -72,6 +72,8 @@ class progress_bars :
         else :
             finish = long
             none = 0
+        finish = int(finish)
+        none = int(none)
         print( f"\r|{ finish * self.finish }{ none * self.none }|{max_value}/{value}" , end = "" )
 
 def progress_bar( value : int , max_value : int ) :
