@@ -52,3 +52,37 @@ def read_cookies( path = ".\\cookie.json" ) :
 
 def get( url , params = None , headers = header , path = ".\\cookie.json" ) :
     return requests.get( url , params , headers = headers , cookies = read_cookies( path ) )
+
+class progress_bars :
+    def __init__( self , max_value : int ) -> None :
+        self.max_value = max_value
+        self.long = 50
+        self.finish = "█"
+        self.none = "░" 
+
+    def show( self , value : int ) -> None :
+        long = self.long
+        max_value = self.max_value
+        if max_value // long < 1 :
+            long = max_value
+        piece = max_value // long
+        finish = value // piece
+        if finish < long :
+            none = long - finish
+        else :
+            finish = long
+            none = 0
+        print( f"\r|{ finish * self.finish }{ none * self.none }|{max_value}/{value}" , end = "" )
+
+def progress_bar( value : int , max_value : int ) :
+    long = 50
+    if max_value // long < 1 :
+        long = max_value
+    piece = max_value // long
+    finish = value // piece
+    if finish < long :
+        none = long - finish
+    else :
+        finish = long
+        none = 0
+    print( f"\r|{finish * '█'}{none * '░' }|{max_value}/{value}" , end = "" )
